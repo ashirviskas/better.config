@@ -251,7 +251,12 @@ exec --no-startup-id nm-applet
 exec_always "setxkbmap -model pc104 -layout us,lt -variant ,, -option grp:alt_shift_toggle"
 exec xset -b
 exec_always flameshot
+
+# Keyboard stuff
 exec_always "ckb-next -b"
+exec_always ~/.config/ckb-next/cpu_temp.sh 000
+exec_always ~/.config/ckb-next/network_status.sh 001
+
 
 exec always feh --bg-scale ~/Pictures/wps/dw_blurred.jpg
 exec_always feh --bg-scale ~/Pictures/wps/dw_blurred.jpg

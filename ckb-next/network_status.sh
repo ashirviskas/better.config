@@ -1,6 +1,8 @@
 #!/bin/sh
 
-
+me="$(basename "$0")";
+running=$(ps h -C "$me" | grep -wv $$ | wc -l);
+[[ $running > 1 ]] && exit;
 
 while true
 do
