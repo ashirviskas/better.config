@@ -1,11 +1,5 @@
 #!/bin/zsh
 
-
-me="$(basename "$0")";
-running=$(ps h -C "$me" | grep -wv $$ | wc -l);
-[[ $running > 1 ]] && exit;
-
-
 while true
 do
     typeset -i temp=`cat /sys/class/hwmon/hwmon1/temp1_input`;

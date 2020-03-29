@@ -254,6 +254,8 @@ exec_always flameshot
 
 # Keyboard stuff
 exec_always "ckb-next -b"
+exec_always killall cpu_temp.sh
+exec_always killall network_status.sh
 exec_always ~/.config/ckb-next/cpu_temp.sh 000
 exec_always ~/.config/ckb-next/network_status.sh 001
 
