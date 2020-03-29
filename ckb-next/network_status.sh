@@ -1,8 +1,10 @@
-#!/bin/sh
+#!/bin/zsh
 
 me="$(basename "$0")";
-running=$(ps h -C "$me" | grep -wv $$ | wc -l);
-[[ $running > 1 ]] && exit;
+#echo $me;
+running=$(COLUMNS=9000 ps -ef | grep "$me" | wc -l);
+#echo $running;
+[[ $running > 3 ]] && exit;
 
 while true
 do
