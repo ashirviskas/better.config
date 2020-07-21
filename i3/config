@@ -194,6 +194,7 @@ bar {
 # floating windows
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Kalu"] floating enable
+for_window [title="CopyQ"] floating enable
 
 
 # Multimedia Keys
@@ -241,6 +242,9 @@ bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 bindsym --whole-window $mod+ctrl+Left workspace prev
 bindsym --whole-window $mod+ctrl+Right workspace next
 
+# Emoji stuff
+bindsym $mod+e exec --no-startup-id ~/.config/scripts/dmenuunicode
+
 
 bindsym $mod+p move workspace to output right
 
@@ -251,6 +255,7 @@ exec --no-startup-id nm-applet
 exec_always "setxkbmap -model pc104 -layout us,lt -variant ,, -option grp:alt_shift_toggle"
 exec xset -b
 exec_always flameshot
+exec_always copyq
 
 # Keyboard stuff
 exec_always "ckb-next -b"
@@ -258,7 +263,7 @@ exec_always killall cpu_temp.sh
 exec_always killall network_status.sh
 exec_always ~/.config/ckb-next/cpu_temp.sh 000
 exec_always ~/.config/ckb-next/network_status.sh 001
-
+exec_always copyq
 
 exec always feh --bg-scale ~/Pictures/wps/dw_blurred.jpg
 exec_always feh --bg-scale ~/Pictures/wps/dw_blurred.jpg
